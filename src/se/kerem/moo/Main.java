@@ -1,3 +1,4 @@
+// Kerem Tazedal, kerem.tazedal@iths.se
 package se.kerem.moo;
 import se.kerem.moo.database.PlayerDAO;
 import se.kerem.moo.database.PlayerDAOImpl;
