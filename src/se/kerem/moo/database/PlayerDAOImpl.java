@@ -1,7 +1,6 @@
 package se.kerem.moo.database;
 import se.kerem.moo.io.IO;
 import se.kerem.moo.model.Player;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

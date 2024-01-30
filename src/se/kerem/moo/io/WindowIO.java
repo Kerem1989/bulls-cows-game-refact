@@ -96,4 +96,26 @@ public class WindowIO implements IO {
         window.dispose();
         System.exit(0);
     }
+
+    public void promptIntroMessage(String goal, IO io) {
+        io.addString("New game:\n");
+        io.addString("For practice, number is: " + goal + "\n");
+    }
+
+    public String promptLogin(IO io){
+        io.addString("Enter your user name:\n");
+        String name = io.getString();
+        return name;
+    }
+
+    public String inputGuess(IO io) {
+        String guess = io.getString();
+        io.addString(guess + "\n");
+        return guess;
+    }
+
+    public boolean displayGuessAndContGame(int nGuess, IO io) {
+        return io.yesNo("Correct, it took " + nGuess
+                + " guesses\nContinue?");
+    }
 }
