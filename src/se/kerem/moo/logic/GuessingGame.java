@@ -4,13 +4,9 @@ import se.kerem.moo.database.ResultDAO;
 import se.kerem.moo.io.IO;
 import java.sql.SQLException;
 
-public interface PuzzleGame {
+public interface GuessingGame {
     String generateFeedback(String goal, String guess);
     String makeGoal();
     void showTopTen(PlayerDAO pdao, ResultDAO rdao, IO io) throws SQLException;
-    void promptIntroMessage(String goal, IO io);
-    String promptLogin(IO io);
-    String inputGuess(IO io);
-    boolean displayGuessAndContGame(int nGuess, IO io);
-    public int continueGameRound(IO io, String storeFeedback, String guess, PuzzleGame puzzleGame, String goal);
+    public int continueGameRound(IO io, String storeFeedback, String guess, GuessingGame guessingGame, String goal);
 }

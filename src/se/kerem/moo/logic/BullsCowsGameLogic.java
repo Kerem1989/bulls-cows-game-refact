@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class BullsCowsGameLogic implements PuzzleGame {
+public class BullsCowsGameLogic implements GuessingGame {
     public String makeGoal() {
         String goal = "";
         for (int i = 0; i < 4; i++) {
@@ -68,6 +68,7 @@ public class BullsCowsGameLogic implements PuzzleGame {
                 System.out.println(templist);
             }
         }
+        // refact
         io.addString("Top Ten List\n Player Average\n");
         int pos = 1;
         topList.sort((p1, p2) -> (Double.compare(p1.getAverage(), p2.getAverage())));
@@ -77,37 +78,15 @@ public class BullsCowsGameLogic implements PuzzleGame {
         }
     }
 
-    public int continueGameRound(IO io, String storeFeedback, String guess, PuzzleGame puzzleGame, String goal){
+    public int continueGameRound(IO io, String storeFeedback, String guess, GuessingGame guessingGame, String goal){
         int nGuess = 1;
         while (!storeFeedback.equals("BBBB,")) {
             nGuess++;
             guess = io.getString();
             io.addString(guess +": ");
-            storeFeedback = puzzleGame.generateFeedback(goal, guess);
+            storeFeedback = guessingGame.generateFeedback(goal, guess);
             io.addString(storeFeedback + "\n");
         }
         return nGuess;
-    }
-
-    public void promptIntroMessage(String goal, IO io) {
-        io.addString("New game:\n");
-        io.addString("For practice, number is: " + goal + "\n");
-    }
-
-    public String promptLogin(IO io){
-        io.addString("Enter your user name:\n");
-        String name = io.getString();
-        return name;
-    }
-
-    public String inputGuess(IO io) {
-        String guess = io.getString();
-        io.addString(guess + "\n");
-        return guess;
-    }
-
-    public boolean displayGuessAndContGame(int nGuess, IO io) {
-        return io.yesNo("Correct, it took " + nGuess
-                + " guesses\nContinue?");
     }
 }

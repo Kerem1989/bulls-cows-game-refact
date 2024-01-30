@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 import se.kerem.moo.io.IO;
 import se.kerem.moo.io.WindowIO;
 import se.kerem.moo.logic.BullsCowsGameLogic;
-import se.kerem.moo.logic.Controller;
-import se.kerem.moo.logic.PuzzleGame;
+import se.kerem.moo.logic.GuessingGame;
 
 import java.sql.SQLException;
 
@@ -14,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerDAOImplTest {
     IO io;
-    PuzzleGame bullsCowsGameLogic;
+    GuessingGame bullsCowsGameLogic;
     PlayerDAO playerDAO;
     ResultDAO resultDAO;
 
