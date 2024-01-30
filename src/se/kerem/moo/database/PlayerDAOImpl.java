@@ -1,5 +1,5 @@
 package se.kerem.moo.database;
-import se.kerem.moo.io.IO;
+import se.kerem.moo.io.GeneralIO;
 import se.kerem.moo.model.Player;
 import java.sql.*;
 import java.util.ArrayList;
@@ -36,16 +36,16 @@ public class PlayerDAOImpl implements PlayerDAO {
 
     }
 
-    public String existByName(String name, IO io) throws SQLException, InterruptedException {
+    public String existByName(String name, GeneralIO generalIo) throws SQLException, InterruptedException {
         int id = 0;
         existByNamePS.setString(1, name);
         ResultSet rs = existByNamePS.executeQuery();
         if (rs.next()) {
             id = rs.getInt("id");
         } else {
-            io.addString("User not in database, please register with admin");
+            generalIo.addString("User not in database, please register with admin");
             Thread.sleep(5000);
-            io.exit();
+            generalIo.exit();
         }
         return null;
     }

@@ -4430,7 +4430,7 @@ nn-nn-07 - Version 3.1.15
       to support fixed-length binary fields for ResultSet.getObject().
 
     - Use our own implementation of buffered input streams to get around
-      blocking behavior of java.io.BufferedInputStream. Disable this with
+      blocking behavior of java.generalIo.BufferedInputStream. Disable this with
       'useReadAheadInput=false'.
 
     - Fixed BUG#6348, failing to connect to the server when one of the

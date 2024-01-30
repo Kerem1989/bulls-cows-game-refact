@@ -2,8 +2,8 @@ package se.kerem.moo.database;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import se.kerem.moo.io.IO;
-import se.kerem.moo.io.WindowIO;
+import se.kerem.moo.io.GeneralIO;
+import se.kerem.moo.io.Window;
 import se.kerem.moo.logic.BullsCowsGameLogic;
 import se.kerem.moo.logic.GuessingGame;
 
@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerDAOImplTest {
-    IO io;
+    GeneralIO generalIo;
     GuessingGame bullsCowsGameLogic;
     PlayerDAO playerDAO;
     ResultDAO resultDAO;
@@ -22,14 +22,14 @@ class PlayerDAOImplTest {
         new BullsCowsGameLogic();
         new PlayerDAOImpl();
         new ResultDAOImpl();
-        new WindowIO("Moo");
+        new Window("Moo");
     }
 
     @Test
     void doesPlayerExist() throws SQLException, InterruptedException {
-        playerDAO.existByName("Kerem", io);
+        playerDAO.existByName("Kerem", generalIo);
         assertTrue(true);
-        playerDAO.existByName("Zlatan", io);
+        playerDAO.existByName("Zlatan", generalIo);
         assertTrue(true);
     }
 }

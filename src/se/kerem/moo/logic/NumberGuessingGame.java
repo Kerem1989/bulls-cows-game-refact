@@ -1,7 +1,7 @@
 package se.kerem.moo.logic;
 import se.kerem.moo.database.PlayerDAO;
 import se.kerem.moo.database.ResultDAO;
-import se.kerem.moo.io.IO;
+import se.kerem.moo.io.GeneralIO;
 import se.kerem.moo.model.Player;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -41,7 +41,7 @@ public class NumberGuessingGame implements GuessingGame {
     }
 
     @Override
-    public void showTopTen(PlayerDAO pdao, ResultDAO rdao, IO io) throws SQLException {
+    public void showTopTen(PlayerDAO pdao, ResultDAO rdao, GeneralIO generalIo) throws SQLException {
         List<Player> topList = new ArrayList<>();
         ResultSet rs = pdao.extractPlayerFromResultSet();
         while (rs.next()) {
@@ -58,24 +58,24 @@ public class NumberGuessingGame implements GuessingGame {
                 topList.add(new Player(name, (double) totalGuesses / nGames));
             }
         }
-        io.addString("Top Ten List\n    Player     Average\n");
+        generalIo.addString("Top Ten List\n    Player     Average\n");
         int pos = 1;
         topList.sort((p1, p2) -> Double.compare(p1.getAverage(), p2.getAverage()));
         for (Player p : topList) {
-            io.addString(String.format("%3d %-10s%5.2f%n", pos, p.getName(), p.getAverage()));
+            generalIo.addString(String.format("%3d %-10s%5.2f%n", pos, p.getName(), p.getAverage()));
             if (pos++ == 10) break;
         }
     }
 
     @Override
-    public int continueGameRound(IO io, String storeFeedback, String guess, GuessingGame guessingGame, String goal) {
-        io.addString(storeFeedback + "\n");
+    public int continueGameRound(GeneralIO generalIo, String storeFeedback, String guess, GuessingGame guessingGame, String goal) {
+        generalIo.addString(storeFeedback + "\n");
 
         if (!storeFeedback.equals("Correct! It took " + nGuess + " guesses.")) {
-            guess = io.getString();
-            io.addString(guess + ": ");
+            guess = generalIo.getString();
+            generalIo.addString(guess + ": ");
             storeFeedback = guessingGame.generateFeedback(goal, guess);
-            io.addString(storeFeedback + "\n");
+            generalIo.addString(storeFeedback + "\n");
         }
 
         return nGuess;
