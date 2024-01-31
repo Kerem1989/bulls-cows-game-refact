@@ -11,7 +11,7 @@ import se.kerem.moo.io.Window;
 import se.kerem.moo.logic.BullsCowsGameLogic;
 import se.kerem.moo.logic.GameController;
 import se.kerem.moo.logic.GuessingGame;
-
+import se.kerem.moo.logic.NumberGuessingGame;
 import java.sql.SQLException;
 
 
@@ -20,9 +20,10 @@ public class Main {
         GeneralIO generalIo = new Window("Moo");
         GameIO gameIo = new InMessagesGame();
         GuessingGame bullsCowsGame = new BullsCowsGameLogic();
+        GuessingGame numberGuessingGame = new NumberGuessingGame();
         PlayerDAO playerDAO = new PlayerDAOImpl();
         ResultDAO resultDAO = new ResultDAOImpl();
-        GameController gameController = new GameController(bullsCowsGame, playerDAO, resultDAO, generalIo, gameIo);
+        GameController gameController = new GameController(numberGuessingGame, playerDAO, resultDAO, generalIo, gameIo);
         gameController.run();
     }
 }

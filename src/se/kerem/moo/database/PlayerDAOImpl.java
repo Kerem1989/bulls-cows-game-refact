@@ -1,3 +1,10 @@
+/*
+ * Class: PlayerDAOImpl
+ * Description: Implementation of the PlayerDAO interface for database management.
+ * Created by: Kerem Bjälvenös Tazedal
+ * Email: kerem.tazedal@iths.se
+ * Date: 2024-01-25
+ */
 package se.kerem.moo.database;
 import se.kerem.moo.io.GeneralIO;
 import se.kerem.moo.model.Player;

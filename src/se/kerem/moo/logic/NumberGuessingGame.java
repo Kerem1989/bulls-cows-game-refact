@@ -66,17 +66,17 @@ public class NumberGuessingGame implements GuessingGame {
         }
     }
 
-    @Override
     public int continueGameRound(GeneralIO generalIo, String storeFeedback, String guess, GuessingGame guessingGame, String goal) {
-        generalIo.addString(storeFeedback + "\n");
-
-        if (!storeFeedback.equals("Correct! It took " + nGuess + " guesses.")) {
+        nGuess = 0;
+        do {
+            nGuess++;
             guess = generalIo.getString();
             generalIo.addString(guess + ": ");
             storeFeedback = guessingGame.returnResultFromGuess(goal, guess);
             generalIo.addString(storeFeedback + "\n");
-        }
+        } while (!storeFeedback.equals("Correct! It took " + nGuess + " guesses."));
 
         return nGuess;
     }
+
 }

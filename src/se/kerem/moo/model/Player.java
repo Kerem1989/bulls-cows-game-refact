@@ -42,10 +42,6 @@ public class Player {
 
     @Override
     public String toString() {
-        return "{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", average=" + average +
-                '}';
+        return String.format("id: %d name: %s average: %.1f", id, name, average);
     }
 }

@@ -38,10 +38,6 @@ public class Result {
 
     @Override
     public String toString() {
-        return "{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", playerId=" + playerId +
-                '}';
+        return "id: " + id + " name: " + name + " playerId: " + playerId;
     }
 }
