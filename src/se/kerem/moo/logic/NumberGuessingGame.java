@@ -22,7 +22,7 @@ public class NumberGuessingGame implements GuessingGame {
     }
 
     @Override
-    public String generateFeedback(String goal, String guess) {
+    public String returnResultFromGuess(String goal, String guess) {
         int userGuess = Integer.parseInt(guess);
         nGuess++;
 
@@ -36,11 +36,10 @@ public class NumberGuessingGame implements GuessingGame {
     }
 
     @Override
-    public String makeGoal() {
+    public String generateRandomNumbers() {
         return Integer.toString(targetNumber);
     }
 
-    @Override
     public void showTopTen(PlayerDAO pdao, ResultDAO rdao, GeneralIO generalIo) throws SQLException {
         List<Player> topList = new ArrayList<>();
         ResultSet rs = pdao.extractPlayerFromResultSet();
@@ -74,7 +73,7 @@ public class NumberGuessingGame implements GuessingGame {
         if (!storeFeedback.equals("Correct! It took " + nGuess + " guesses.")) {
             guess = generalIo.getString();
             generalIo.addString(guess + ": ");
-            storeFeedback = guessingGame.generateFeedback(goal, guess);
+            storeFeedback = guessingGame.returnResultFromGuess(goal, guess);
             generalIo.addString(storeFeedback + "\n");
         }
 

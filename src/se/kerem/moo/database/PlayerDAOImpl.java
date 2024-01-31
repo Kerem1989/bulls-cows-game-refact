@@ -16,7 +16,7 @@ public class PlayerDAOImpl implements PlayerDAO {
             byNamePS = connection.prepareStatement("select * from players where name = ?");
             existByNamePS = connection.prepareStatement("select id,name from players where name = ?");
         } catch (SQLException e) {
-            throw new RuntimeException("fail in se.kerem.moo.database.PlayerDAO ctor:" + e);
+            throw new RuntimeException("Connection to database failed:" + e);
         }
     }
 
@@ -31,23 +31,26 @@ public class PlayerDAOImpl implements PlayerDAO {
                 return null;
             }
         } catch (SQLException e) {
-            throw new RuntimeException("EmployeeDAO.byid fail:" + e);
+            throw new RuntimeException("Failed to retrieve player data by name:" + e);
         }
 
     }
 
-    public String existByName(String name, GeneralIO generalIo) throws SQLException, InterruptedException {
+    public void existByName(String name, GeneralIO generalIo){
         int id = 0;
-        existByNamePS.setString(1, name);
-        ResultSet rs = existByNamePS.executeQuery();
-        if (rs.next()) {
-            id = rs.getInt("id");
-        } else {
-            generalIo.addString("User not in database, please register with admin");
-            Thread.sleep(5000);
-            generalIo.exit();
+        try {
+            existByNamePS.setString(1, name);
+            ResultSet rs = existByNamePS.executeQuery();
+            if (rs.next()) {
+                id = rs.getInt("id");
+            } else {
+                generalIo.addString("User not in database, please register with admin");
+                Thread.sleep(5000);
+                generalIo.exit();
+            }
+        } catch (SQLException | InterruptedException e) {
+            throw new RuntimeException(e);
         }
-        return null;
     }
 
     @Override
@@ -59,14 +62,18 @@ public class PlayerDAOImpl implements PlayerDAO {
                 allPlayers.add(new Player(rs.getInt("id"),rs.getString("name")));
             }
         } catch (SQLException e) {
-            throw new RuntimeException("EmployeeDAO.getAll fail:" + e);
+            throw new RuntimeException("Failed to retrive player data:" + e);
         }
         return allPlayers;
     }
 
-    public ResultSet extractPlayerFromResultSet() throws SQLException {
-        ResultSet rs = allPS.executeQuery();
-        return rs;
+    public ResultSet extractPlayerFromResultSet(){
+        try {
+            ResultSet rs = allPS.executeQuery();
+            return rs;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 

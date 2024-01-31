@@ -42,7 +42,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return "se.kerem.moo.blueprint.Player{" +
+        return "{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", average=" + average +

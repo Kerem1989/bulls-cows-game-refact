@@ -38,7 +38,7 @@ public class Result {
 
     @Override
     public String toString() {
-        return "se.kerem.moo.blueprint.Result{" +
+        return "{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", playerId=" + playerId +

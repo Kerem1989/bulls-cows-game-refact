@@ -18,7 +18,7 @@ class BullsCowsGameLogicTest {
 
     @Test
     void makeGoal() {
-        String result = bullsCowsGameLogic.makeGoal();
+        String result = bullsCowsGameLogic.generateRandomNumbers();
         assertNotEquals(3, result.length());
     }
 
