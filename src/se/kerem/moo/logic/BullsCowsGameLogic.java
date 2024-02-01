@@ -1,3 +1,10 @@
+/*
+ * Class: BullCowsGameLogic
+ * Description: A class that implements GuessingGame, it handles the logic of the game.
+ * Created by: Kerem Bjälvenös Tazedal
+ * Email: kerem.tazedal@iths.se
+ * Date: 2024-01-25
+ */
 package se.kerem.moo.logic;
 import se.kerem.moo.io.GeneralIO;
 

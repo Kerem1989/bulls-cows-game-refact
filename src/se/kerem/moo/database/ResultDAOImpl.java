@@ -1,6 +1,6 @@
 /*
  * Class: PlayerDAOImpl
- * Description: Implementation of the PlayerDAO interface for database management.
+ * Description: Implementation of the ResultDAO interface for database management.
  * Created by: Kerem Bjälvenös Tazedal
  * Email: kerem.tazedal@iths.se
  * Date: 2024-01-25

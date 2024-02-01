@@ -1,3 +1,11 @@
+/*
+ * Class: InMessagesGame
+ * Description: A class that implements GameIO that handles messages to user.
+ * while running the game
+ * Created by: Kerem Bjälvenös Tazedal
+ * Email: kerem.tazedal@iths.se
+ * Date: 2024-01-25
+ */
 package se.kerem.moo.io;
 
 public class InMessagesGame implements GameIO{

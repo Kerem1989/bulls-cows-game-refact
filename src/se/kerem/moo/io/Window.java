@@ -1,3 +1,10 @@
+/*
+ * Class: Windows
+ * Description: A class that implements GeneralIO that handles swings components in game.
+ * Created by: Kerem Bjälvenös Tazedal
+ * Email: kerem.tazedal@iths.se
+ * Date: 2024-01-25
+ */
 package se.kerem.moo.io;
 import java.awt.BorderLayout;
 import java.awt.Color;

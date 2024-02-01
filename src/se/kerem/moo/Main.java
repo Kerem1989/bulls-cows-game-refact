@@ -1,4 +1,10 @@
-// Kerem Tazedal, kerem.tazedal@iths.se
+/*
+ * Class: Main
+ * Description: A class that runs the program with DI
+ * Created by: Kerem Bjälvenäs Tazedal
+ * Email: kerem.tazedal@iths.se
+ * Date: 2024-01-25
+ */
 package se.kerem.moo;
 import se.kerem.moo.database.PlayerDAO;
 import se.kerem.moo.database.PlayerDAOImpl;

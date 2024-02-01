@@ -1,3 +1,10 @@
+/*
+ * Class: GameController
+ * Description: A class that connects the various classes of the program.
+ * Created by: Kerem Bjälvenös Tazedal
+ * Email: kerem.tazedal@iths.se
+ * Date: 2024-01-25
+ */
 package se.kerem.moo.logic;
 import se.kerem.moo.database.PlayerDAO;
 import se.kerem.moo.database.ResultDAO;

@@ -1,3 +1,10 @@
+/*
+ * Class: NumberGuessingGame
+ * Description: A AI generated guessing game for testing purposes.
+ * Created by: Chat GPT
+ * Email: kerem.tazedal@iths.se
+ * Date: 2024-01-25
+ */
 package se.kerem.moo.logic;
 import se.kerem.moo.database.PlayerDAO;
 import se.kerem.moo.database.ResultDAO;

@@ -1,9 +1,15 @@
+/*
+ * Class: Result
+ * Description: A model class for Result.
+ * Created by: Kerem Bjälvenäs Tazedal
+ * Email: kerem.tazedal@iths.se
+ * Date: 2024-01-25
+ */
 package se.kerem.moo.model;
 
 public class Result {
     private int id;
     private String name;
-
     private int playerId;
 
     public Result(int id, String name, int playerid) {
