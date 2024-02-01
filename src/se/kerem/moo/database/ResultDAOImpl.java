@@ -26,7 +26,7 @@ public class ResultDAOImpl implements ResultDAO {
     }
 
     @Override
-    public void insertUserChoice(int nGuess, int id){
+    public int insertUserChoice(int nGuess, int id){
         try {
             insertResultPS.setInt(1,  nGuess);
             insertResultPS.setInt(2,id);
@@ -34,6 +34,7 @@ public class ResultDAOImpl implements ResultDAO {
         } catch (SQLException e) {
             throw new RuntimeException("Failed to insert result data:" + e);
         }
+        return nGuess;
     }
 
     public ResultSet selectResultByPlayerId(int id){

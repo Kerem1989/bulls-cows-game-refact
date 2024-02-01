@@ -29,7 +29,7 @@ public class Main {
         GuessingGame numberGuessingGame = new NumberGuessingGame();
         PlayerDAO playerDAO = new PlayerDAOImpl();
         ResultDAO resultDAO = new ResultDAOImpl();
-        GameController gameController = new GameController(numberGuessingGame, playerDAO, resultDAO, generalIo, gameIo);
+        GameController gameController = new GameController(bullsCowsGame, playerDAO, resultDAO, generalIo, gameIo);
         gameController.run();
     }
 }
