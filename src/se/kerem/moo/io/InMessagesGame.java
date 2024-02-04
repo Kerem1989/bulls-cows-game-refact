@@ -22,8 +22,17 @@ public class InMessagesGame implements GameIO{
     }
 
     public String inputGuess(GeneralIO generalIo) {
-        String guess = generalIo.getString();
-        generalIo.addString(guess + "\n");
+        boolean correctGuess = false;
+        String guess;
+        do {
+            guess = generalIo.getString();
+            if (guess.matches("[0-9]+")){
+                generalIo.addString(guess + "\n");
+                correctGuess = true;
+            } else {
+                generalIo.addString("Invalid input, please enter a number.\n");
+            }
+        } while (!correctGuess);
         return guess;
     }
 
