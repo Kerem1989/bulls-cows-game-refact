@@ -11,7 +11,6 @@ import se.kerem.moo.database.ResultDAO;
 import se.kerem.moo.io.GameIO;
 import se.kerem.moo.io.GeneralIO;
 import se.kerem.moo.model.Player;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class GameController {
@@ -29,7 +28,7 @@ public class GameController {
         this.gameIo = gameIo;
     }
 
-    public void run() throws SQLException, InterruptedException {
+    public void run()  {
         String name = gameIo.promptLogin(generalIo);
         Player gotName = playerDAO.getByName(name);
         playerDAO.existByName(name, generalIo);
