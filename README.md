@@ -59,7 +59,9 @@ The main goals of this refactoring exercise are:
 
 
 
-### Built With
+
+<!-- TECHNOLOGIES USED -->
+## Technologies used
 * [![Java][Java.com]][Java-url]
 * [![MySQL][MySQL.com]][MySQL-url]
 
@@ -75,7 +77,7 @@ To run this project, you need the following software installed:
 * Java Development Kit (JDK) 11 or higher
 * Maven for managing dependencies and building the project
 
-### Installation
+## Installation
 * Clone the repository
 * Build the project using Maven
 * Run the tests to ensure everything is set up correctly
