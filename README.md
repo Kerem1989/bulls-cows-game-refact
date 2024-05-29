@@ -23,7 +23,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="images/bull.png" alt="Logo" width="130" height="80">
+    <img src="images/bull.jpg" alt="Logo" width="130" height="80">
   </a>
 
     
